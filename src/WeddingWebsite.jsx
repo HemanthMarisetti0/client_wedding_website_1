@@ -82,8 +82,7 @@ function RotatingText({ en, te }) {
 
 /* -------- Main Component -------- */
 export default function WeddingWebsite() {
-  const weddingDate = new Date("2026-05-10T22:19:00+05:30");
-
+  const weddingDate = new Date("2026-08-16T00:23:00+05:30");
   const [timeLeft, setTimeLeft] = useState({});
 
   const invitedName = useMemo(() => {
@@ -293,6 +292,435 @@ export default function WeddingWebsite() {
               }}
             />
           </div>
+          {/* ✨ BRIDE & GROOM PORTRAITS */}
+          <motion.div
+            style={{
+              margin: "55px auto 45px",
+              position: "relative",
+              width: "100%",
+              maxWidth: "760px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              padding: "20px 10px 35px",
+            }}
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+          >
+            {/* ================================================= */}
+            {/* SOFT GOLDEN GLOW */}
+            {/* ================================================= */}
+
+            <div
+              style={{
+                position: "absolute",
+                width: "520px",
+                height: "280px",
+                left: "50%",
+                top: "45%",
+                transform: "translate(-50%, -50%)",
+                background:
+                  "radial-gradient(circle, rgba(212,175,55,0.18), transparent 70%)",
+                filter: "blur(25px)",
+                pointerEvents: "none",
+              }}
+            />
+
+            {/* ================================================= */}
+            {/* TOP DECORATION */}
+            {/* ================================================= */}
+
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "10px",
+                marginBottom: "22px",
+                color: "#d4af37",
+              }}
+            >
+              <span
+                style={{
+                  width: "55px",
+                  height: "1px",
+                  background:
+                    "linear-gradient(to right, transparent, #d4af37)",
+                }}
+              />
+
+              <span style={{ fontSize: "14px" }}>✦</span>
+
+              <span
+                style={{
+                  width: "55px",
+                  height: "1px",
+                  background:
+                    "linear-gradient(to left, transparent, #d4af37)",
+                }}
+              />
+            </div>
+
+            {/* ================================================= */}
+            {/* COUPLE ROW */}
+            {/* ================================================= */}
+
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "22px",
+                position: "relative",
+                zIndex: 2,
+              }}
+            >
+              {/* ================================================= */}
+              {/* GROOM */}
+              {/* ================================================= */}
+
+              <motion.div
+                whileHover={{
+                  y: -10,
+                  rotate: -2,
+                  scale: 1.025,
+                }}
+                animate={{
+                  y: [0, -4, 0],
+                }}
+                transition={{
+                  y: {
+                    duration: 4.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  },
+                }}
+                style={{
+                  position: "relative",
+                  width: "clamp(140px, 32vw, 220px)",
+                  flexShrink: 0,
+                  transform: "rotate(-4deg)",
+                }}
+              >
+                {/* GOLD FRAME */}
+                <div
+                  style={{
+                    padding: "8px",
+                    borderRadius: "23px",
+                    background:
+                      "linear-gradient(135deg, #8f6508, #f5dc8b, #d4af37, #fff2b8, #a8780c)",
+                    boxShadow:
+                      "0 16px 35px rgba(91,70,54,0.20), 0 0 25px rgba(212,175,55,0.18)",
+                  }}
+                >
+                  <div
+                    style={{
+                      padding: "5px",
+                      borderRadius: "18px",
+                      background: "#fffdf7",
+                      border: "1px solid rgba(180,134,20,0.45)",
+                    }}
+                  >
+                    <img
+                      src="/groomphoto.jpg"
+                      alt="Ganesh"
+                      style={{
+                        width: "100%",
+                        aspectRatio: "4 / 5",
+                        objectFit: "cover",
+                        display: "block",
+                        borderRadius: "13px",
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* CORNERS */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-8px",
+                    left: "-8px",
+                    width: "30px",
+                    height: "30px",
+                    borderTop: "2px solid #d4af37",
+                    borderLeft: "2px solid #d4af37",
+                    borderRadius: "9px 0 0 0",
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "-8px",
+                    right: "-8px",
+                    width: "30px",
+                    height: "30px",
+                    borderBottom: "2px solid #d4af37",
+                    borderRight: "2px solid #d4af37",
+                    borderRadius: "0 0 9px 0",
+                  }}
+                />
+
+                {/* NAME */}
+                <div
+                  style={{
+                    marginTop: "14px",
+                    textAlign: "center",
+                    padding: "7px 8px",
+                    borderRadius: "13px",
+                    background:
+                      "linear-gradient(180deg, #fffdf7, #fff8e9)",
+                    border:
+                      "1px solid rgba(212,175,55,0.28)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily:
+                        "'Playfair Display', Georgia, serif",
+                      fontSize: "18px",
+                      letterSpacing: "2.5px",
+                      color: "#7c2d12",
+                      fontWeight: 700,
+                    }}
+                  >
+                    GANESH
+                  </div>
+
+                  <div
+                    style={{
+                      marginTop: "4px",
+                      fontSize: "13px",
+                      color: "#a16207",
+                      fontWeight: 600,
+                    }}
+                  >
+                    <RotatingText
+                      en="THE GROOM"
+                      te="పెళ్లికొడుకు"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* ================================================= */}
+              {/* ❤️ HEART — COMPLETELY BETWEEN PHOTOS */}
+              {/* ================================================= */}
+
+              <motion.div
+                animate={{
+                  scale: [1, 1.12, 1],
+                  y: [0, -5, 0],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                style={{
+                  flexShrink: 0,
+                  width: "58px",
+                  height: "58px",
+                  borderRadius: "50%",
+                  background:
+                    "linear-gradient(145deg, #fffdf7, #fff1cf)",
+                  border: "2px solid #d4af37",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  zIndex: 5,
+                  boxShadow:
+                    "0 7px 22px rgba(91,70,54,0.18), 0 0 22px rgba(212,175,55,0.25)",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "26px",
+                    color: "#a33b12",
+                    lineHeight: 1,
+                  }}
+                >
+                  ♥
+                </span>
+              </motion.div>
+
+              {/* ================================================= */}
+              {/* BRIDE */}
+              {/* ================================================= */}
+
+              <motion.div
+                whileHover={{
+                  y: -10,
+                  rotate: 2,
+                  scale: 1.025,
+                }}
+                animate={{
+                  y: [0, -4, 0],
+                }}
+                transition={{
+                  y: {
+                    duration: 4.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.5,
+                  },
+                }}
+                style={{
+                  position: "relative",
+                  width: "clamp(140px, 32vw, 220px)",
+                  flexShrink: 0,
+                  transform: "rotate(4deg)",
+                }}
+              >
+                {/* GOLD FRAME */}
+                <div
+                  style={{
+                    padding: "8px",
+                    borderRadius: "23px",
+                    background:
+                      "linear-gradient(135deg, #8f6508, #f5dc8b, #d4af37, #fff2b8, #a8780c)",
+                    boxShadow:
+                      "0 16px 35px rgba(91,70,54,0.20), 0 0 25px rgba(212,175,55,0.18)",
+                  }}
+                >
+                  <div
+                    style={{
+                      padding: "5px",
+                      borderRadius: "18px",
+                      background: "#fffdf7",
+                      border: "1px solid rgba(180,134,20,0.45)",
+                    }}
+                  >
+                    <img
+                      src="/bridephoto.jpg"
+                      alt="Maithili"
+                      style={{
+                        width: "100%",
+                        aspectRatio: "4 / 5",
+                        objectFit: "cover",
+                        display: "block",
+                        borderRadius: "13px",
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* CORNERS */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "-8px",
+                    right: "-8px",
+                    width: "30px",
+                    height: "30px",
+                    borderTop: "2px solid #d4af37",
+                    borderRight: "2px solid #d4af37",
+                    borderRadius: "0 9px 0 0",
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "-8px",
+                    left: "-8px",
+                    width: "30px",
+                    height: "30px",
+                    borderBottom: "2px solid #d4af37",
+                    borderLeft: "2px solid #d4af37",
+                    borderRadius: "0 0 0 9px",
+                  }}
+                />
+
+                {/* NAME */}
+                <div
+                  style={{
+                    marginTop: "14px",
+                    textAlign: "center",
+                    padding: "7px 8px",
+                    borderRadius: "13px",
+                    background:
+                      "linear-gradient(180deg, #fffdf7, #fff8e9)",
+                    border:
+                      "1px solid rgba(212,175,55,0.28)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily:
+                        "'Playfair Display', Georgia, serif",
+                      fontSize: "18px",
+                      letterSpacing: "2.5px",
+                      color: "#7c2d12",
+                      fontWeight: 700,
+                    }}
+                  >
+                    MAITHILI
+                  </div>
+
+                  <div
+                    style={{
+                      marginTop: "4px",
+                      fontSize: "13px",
+                      color: "#a16207",
+                      fontWeight: 600,
+                    }}
+                  >
+                    <RotatingText
+                      en="THE BRIDE"
+                      te="పెళ్లికూతురు"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* ================================================= */}
+            {/* BOTTOM DECORATION */}
+            {/* ================================================= */}
+
+            <div
+              style={{
+                marginTop: "28px",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                color: "#d4af37",
+              }}
+            >
+              <span style={{ fontSize: "10px" }}>✧</span>
+
+              <span
+                style={{
+                  width: "35px",
+                  height: "1px",
+                  background:
+                    "linear-gradient(to right, transparent, #d4af37)",
+                }}
+              />
+
+              <span style={{ fontSize: "12px" }}>✦</span>
+
+              <span
+                style={{
+                  width: "35px",
+                  height: "1px",
+                  background:
+                    "linear-gradient(to left, transparent, #d4af37)",
+                }}
+              />
+
+              <span style={{ fontSize: "10px" }}>✧</span>
+            </div>
+          </motion.div>
+
 
           {/* Names Section */}
           <div style={styles.namesWrapper}>
@@ -324,16 +752,20 @@ export default function WeddingWebsite() {
             {/* Names */}
             <div style={{ position: "relative", zIndex: 1 }}>
               <div style={styles.name}>
-                <RotatingText en="HEMANTH KUMAR" te="హేమంత్ కుమార్" />
-              </div>
+                <RotatingText
+                  en="BALA GANESHWARA SWAMI"
+                  te="బాల గణేశ్వర స్వామి"
+                />              </div>
 
               <div style={styles.weds}>
                 <RotatingText en="weds" te="వివాహం" />
               </div>
 
               <div style={styles.name}>
-                <RotatingText en="NEERAJA" te="నీరజ" />
-              </div>
+                <RotatingText
+                  en="LAKSHMI MAITHILI"
+                  te="లక్ష్మి మైతిలి"
+                />              </div>
             </div>
 
             {/* Border Bottom */}
@@ -357,21 +789,34 @@ export default function WeddingWebsite() {
 
             {/* Day */}
             <div style={styles.day}>
-              <RotatingText en="SUNDAY" te="ఆదివారం" />
+              <RotatingText
+                en="SUNDAY"
+                te="ఆదివారం"
+              />
             </div>
 
             {/* Main Date */}
             <div style={styles.mainDate}>
-              <span style={styles.big}>10</span>
+              <span style={styles.big}>16</span>
+
               <div style={styles.side}>
-                <RotatingText en="MAY" te="మే" />
-                <span style={styles.year}>2026</span>
+                <RotatingText
+                  en="AUGUST"
+                  te="ఆగస్టు"
+                />
+
+                <span style={styles.year}>
+                  2026
+                </span>
               </div>
             </div>
 
             {/* Time */}
             <div style={styles.time}>
-              <RotatingText en="10:19 PM" te="రాత్రి 10:19" />
+              <RotatingText
+                en="12:23 AM"
+                te="రాత్రి 12:23"
+              />
             </div>
 
             {/* Bottom Line */}
@@ -410,190 +855,267 @@ export default function WeddingWebsite() {
             {/* WEDDING */}
             <motion.div
               style={{
-                padding: "26px",
-                borderRadius: "24px",
-                background: "#fffdf8",
-                border: "1px solid rgba(212,175,55,0.25)",
-                boxShadow: "0 8px 25px rgba(0,0,0,0.06)",
+                position: "relative",
+                padding: "32px 26px",
+                borderRadius: "28px",
+                background:
+                  "linear-gradient(145deg, #fffdf8 0%, #fff8ed 100%)",
+                border: "1px solid rgba(180, 83, 9, 0.18)",
+                boxShadow:
+                  "0 15px 40px rgba(91, 70, 54, 0.10), inset 0 0 30px rgba(212,175,55,0.05)",
                 textAlign: "center",
+                overflow: "hidden",
               }}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
+              initial={{ opacity: 0, y: 40, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
+              {/* Decorative corners */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "12px",
+                  left: "12px",
+                  width: "35px",
+                  height: "35px",
+                  borderTop: "2px solid rgba(180,83,9,0.35)",
+                  borderLeft: "2px solid rgba(180,83,9,0.35)",
+                  borderRadius: "12px 0 0 0",
+                }}
+              />
+
+              <div
+                style={{
+                  position: "absolute",
+                  top: "12px",
+                  right: "12px",
+                  width: "35px",
+                  height: "35px",
+                  borderTop: "2px solid rgba(180,83,9,0.35)",
+                  borderRight: "2px solid rgba(180,83,9,0.35)",
+                  borderRadius: "0 12px 0 0",
+                }}
+              />
+
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "12px",
+                  left: "12px",
+                  width: "35px",
+                  height: "35px",
+                  borderBottom: "2px solid rgba(180,83,9,0.35)",
+                  borderLeft: "2px solid rgba(180,83,9,0.35)",
+                  borderRadius: "0 0 0 12px",
+                }}
+              />
+
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "12px",
+                  right: "12px",
+                  width: "35px",
+                  height: "35px",
+                  borderBottom: "2px solid rgba(180,83,9,0.35)",
+                  borderRight: "2px solid rgba(180,83,9,0.35)",
+                  borderRadius: "0 0 12px 0",
+                }}
+              />
+
+
+
+              {/* Title */}
               <h3
                 style={{
-                  fontSize: "16px",
-                  letterSpacing: "3px",
-                  color: "#b45309",
-                  marginBottom: "14px",
+                  fontSize: "15px",
+                  letterSpacing: "4px",
+                  color: "#a16207",
+                  margin: "0 0 18px",
+                  fontWeight: "700",
+                  textTransform: "uppercase",
                 }}
               >
                 <RotatingText
                   en="WEDDING CEREMONY"
-                  te="వివాహ వేడుక"
+                  te="కళ్యాణ వేడుక"
                 />
               </h3>
 
-              <p style={{ fontSize: "15px", fontWeight: "600", color: "#5b4636" }}>
-                <RotatingText
-                  en="May 10, 2026"
-                  te="మే 10, 2026"
-                />
-              </p>
-
-              <p style={{ fontSize: "14px", color: "#7a5c2e", marginBottom: "14px" }}>
-                <RotatingText
-                  en="10:19 PM (Muhurtham)"
-                  te="రాత్రి 10:19 గంటలకు (ముహూర్తం)"
-                />
-              </p>
-
+              {/* Gold divider */}
               <div
                 style={{
-                  marginTop: "16px",
-                  padding: "16px",
-                  borderRadius: "18px",
-                  background: "#fff7ed",
-                  border: "1px solid rgba(212,175,55,0.2)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "10px",
+                  marginBottom: "18px",
                 }}
               >
-                <h4 style={{ fontSize: "15px", fontWeight: "600", color: "#6b4f1d" }}>
+                <span
+                  style={{
+                    width: "45px",
+                    height: "1px",
+                    background:
+                      "linear-gradient(to right, transparent, #d4af37)",
+                  }}
+                />
+
+                <span
+                  style={{
+                    color: "#d4af37",
+                    fontSize: "13px",
+                  }}
+                >
+                  ✦
+                </span>
+
+                <span
+                  style={{
+                    width: "45px",
+                    height: "1px",
+                    background:
+                      "linear-gradient(to left, transparent, #d4af37)",
+                  }}
+                />
+              </div>
+
+              {/* Date */}
+              <p
+                style={{
+                  fontSize: "25px",
+                  fontWeight: "700",
+                  color: "#5b4636",
+                  margin: "0 0 7px",
+                  letterSpacing: "0.5px",
+                  fontFamily: "Georgia, serif",
+                }}
+              >
+                <RotatingText
+                  en="16 August 2026"
+                  te="16-08-2026"
+                />
+              </p>
+
+              {/* Day & Time */}
+              <p
+                style={{
+                  fontSize: "14px",
+                  color: "#8b6f3d",
+                  margin: "0 0 22px",
+                  letterSpacing: "0.4px",
+                }}
+              >
+                <RotatingText
+                  en="Sunday · 7:00 PM onwards"
+                  te="ఆదివారం · రాత్రి 7:00 గంటల నుండి"
+                />
+              </p>
+
+              {/* Venue Card */}
+              <div
+                style={{
+                  position: "relative",
+                  padding: "20px 16px",
+                  borderRadius: "20px",
+                  background:
+                    "rgba(255,247,237,0.85)",
+                  border: "1px solid rgba(212,175,55,0.22)",
+                  boxShadow:
+                    "0 5px 18px rgba(139,111,61,0.06)",
+                }}
+              >
+
+
+                <h4
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "700",
+                    color: "#6b4f1d",
+                    margin: "0 0 6px",
+                    fontFamily: "Georgia, serif",
+                  }}
+                >
                   <RotatingText
-                    en="Sri Sundara Sai Nigamagamu"
-                    te="శ్రీ సుందర సాయి నిగమాగము"
+                    en="Kalyana Vedika"
+                    te="కళ్యాణ వేదిక"
                   />
                 </h4>
 
-                <p style={{ fontSize: "13px", color: "#8b6f3d" }}>
+                <p
+                  style={{
+                    fontSize: "13px",
+                    color: "#8b6f3d",
+                    margin: "0 0 5px",
+                  }}
+                >
                   <RotatingText
-                    en="Kalyana Mandapam"
-                    te="కళ్యాణ మండపం"
+                    en="Wedding Ceremony"
+                    te="వివాహ వేడుక"
                   />
                 </p>
 
-                <p style={{ fontSize: "12px", color: "#9a7b4f", marginBottom: "12px" }}>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    color: "#9a7b4f",
+                    margin: "0 0 16px",
+                  }}
+                >
                   <RotatingText
-                    en="Near RTC Complex, Kovvur"
-                    te="ఆర్టీసీ కాంప్లెక్స్ సమీపం, కొవ్వూరు"
+                    en="Dinner / Feast"
+                    te="విందు"
                   />
                 </p>
 
-                {/* 📍 GOOGLE MAP */}
+                {/* Location Button */}
                 <a
-                  href="https://maps.app.goo.gl/3gPmf8T3m1DM3EHs6"
+                  href="https://maps.app.goo.gl/Dks2vHY5PLKayPuq9"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    display: "inline-block",
-                    marginTop: "6px",
-                    padding: "8px 14px",
-                    borderRadius: "20px",
-                    background: "#b45309",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "7px",
+                    padding: "10px 18px",
+                    borderRadius: "30px",
+                    background:
+                      "linear-gradient(135deg, #b45309, #d97706)",
                     color: "#fff",
                     fontSize: "12px",
+                    fontWeight: "600",
                     textDecoration: "none",
-                    letterSpacing: "1px",
+                    letterSpacing: "0.8px",
+                    boxShadow:
+                      "0 5px 14px rgba(180,83,9,0.22)",
+                    transition: "all 0.3s ease",
                   }}
                 >
-                  View Location
+                  📍
+                  <span>View Location</span>
                 </a>
               </div>
-            </motion.div>
 
-            {/* RECEPTION */}
-            <motion.div
-              style={{
-                padding: "26px",
-                borderRadius: "24px",
-                background: "#fffdfc",
-                border: "1px solid rgba(244,63,94,0.18)",
-                boxShadow: "0 8px 25px rgba(0,0,0,0.06)",
-                textAlign: "center",
-              }}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              <h3
+              {/* Bottom blessing */}
+              <p
                 style={{
-                  fontSize: "16px",
-                  letterSpacing: "3px",
-                  color: "#9f1239",
-                  marginBottom: "14px",
+                  margin: "20px 0 0",
+                  fontSize: "12px",
+                  color: "#a0835c",
+                  fontStyle: "italic",
+                  letterSpacing: "0.5px",
                 }}
               >
                 <RotatingText
-                  en="RECEPTION & LUNCH"
-                  te="రిసెప్షన్ & విందు"
-                />
-              </h3>
-
-              <p style={{ fontSize: "15px", fontWeight: "600", color: "#5b4636" }}>
-                <RotatingText
-                  en="May 11, 2026"
-                  te="మే 11, 2026"
+                  en="Your presence is our blessing"
+                  te="మీ రాకే మా ఆశీర్వాదం"
                 />
               </p>
-
-              <p style={{ fontSize: "14px", color: "#7a5c2e", marginBottom: "14px" }}>
-                <RotatingText
-                  en="12:00 PM onwards"
-                  te="మధ్యాహ్నం 12:00 గంటల నుండి"
-                />
-              </p>
-
-              <div
-                style={{
-                  marginTop: "16px",
-                  padding: "16px",
-                  borderRadius: "18px",
-                  background: "#fff1f2",
-                  border: "1px solid rgba(244,63,94,0.15)",
-                }}
-              >
-                <h4 style={{ fontSize: "15px", fontWeight: "600", color: "#7f1d1d" }}>
-                  <RotatingText
-                    en="At Our Home"
-                    te="మా గృహంలో"
-                  />
-                </h4>
-
-                <p style={{ fontSize: "13px", color: "#9f1239" }}>
-                  <RotatingText
-                    en="Kakula Illindalaparru"
-                    te="కాకుల ఇల్లిందలపర్రు"
-                  />
-                </p>
-
-                <p style={{ fontSize: "12px", color: "#9a7b4f", marginBottom: "12px" }}>
-                  <RotatingText
-                    en="Reception & Lunch Gathering"
-                    te="విందు & స్వాగత కార్యక్రమం"
-                  />
-                </p>
-
-                {/* 📍 GOOGLE MAP BUTTON */}
-                <a
-                  href="https://maps.app.goo.gl/TEZf5xJ2HDcNH4ob7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "inline-block",
-                    marginTop: "6px",
-                    padding: "8px 14px",
-                    borderRadius: "20px",
-                    background: "#9f1239",
-                    color: "#fff",
-                    fontSize: "12px",
-                    textDecoration: "none",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  View Location
-                </a>
-              </div>
             </motion.div>
+
+
           </div>
 
           <motion.div
@@ -655,8 +1177,8 @@ export default function WeddingWebsite() {
                   }}
                 >
                   <RotatingText
-                    en="Dhana Venkateswara Rao"
-                    te="ధాన వెంకటేశ్వర రావు"
+                    en="Guthula Srinivas (Late)"
+                    te="గుత్తుల శ్రీనివాస్ (లేట్)"
                   />
                 </p>
 
@@ -668,8 +1190,8 @@ export default function WeddingWebsite() {
                   }}
                 >
                   <RotatingText
-                    en="& Kanakamaha Lakshmi"
-                    te="& కనకమహా లక్ష్మి"
+                    en="& Anantha Lakshmi"
+                    te="& అనంత లక్ష్మి"
                   />
                 </p>
 
@@ -681,7 +1203,6 @@ export default function WeddingWebsite() {
                     letterSpacing: "1px",
                   }}
                 >
-
                   <RotatingText
                     en="Groom’s Parents"
                     te="వరుడి తల్లిదండ్రులు"
@@ -700,8 +1221,8 @@ export default function WeddingWebsite() {
                   }}
                 >
                   <RotatingText
-                    en="Venkateswara Rao"
-                    te="వెంకటేశ్వర రావు"
+                    en="Gudaala Nageswara Rao (Late)"
+                    te="గూడాల నాగేశ్వర రావు (లేట్)"
                   />
                 </p>
 
@@ -713,8 +1234,8 @@ export default function WeddingWebsite() {
                   }}
                 >
                   <RotatingText
-                    en="& Aadhi Lakshmi"
-                    te="& ఆది లక్ష్మి"
+                    en="& Padmavathi"
+                    te="& పద్మావతి"
                   />
                 </p>
 
@@ -726,7 +1247,6 @@ export default function WeddingWebsite() {
                     letterSpacing: "1px",
                   }}
                 >
-
                   <RotatingText
                     en="Bride’s Parents"
                     te="వధువు తల్లిదండ్రులు"
@@ -737,7 +1257,7 @@ export default function WeddingWebsite() {
 
             {/* Brother (separate = better spacing) */}
             {/* Brother */}
-            <div style={{ marginTop: "45px" }}>
+            {/* <div style={{ marginTop: "45px" }}>
               <p
                 style={{
                   fontSize: "15px",
@@ -764,71 +1284,172 @@ export default function WeddingWebsite() {
                   te="భాను ప్రకాష్ (బాలు)"
                 />
               </p>
-            </div>
+            </div> */}
           </motion.div>
 
 
         </motion.div>
 
       </div>
-      <motion.div
-        style={{
-          marginTop: "80px",
-          padding: "25px 10px",
-          textAlign: "center",
-          borderTop: "1px solid rgba(212,175,55,0.2)",
-          fontFamily: "'Cormorant Garamond', serif",
-        }}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        {/* Divider */}
-        <div
-          style={{
-            width: "50px",
-            height: "2px",
-            background: "#d4af37",
-            margin: "0 auto 15px",
-          }}
-        />
+<motion.div
+  style={{
+    marginTop: "75px",
+    padding: "30px 15px 35px",
+    textAlign: "center",
+    position: "relative",
+    fontFamily: "'Cormorant Garamond', serif",
+  }}
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{
+    duration: 1,
+    ease: "easeOut",
+  }}
+>
+  {/* Top divider */}
+  <div
+    style={{
+      width: "100%",
+      maxWidth: "240px",
+      height: "1px",
+      margin: "0 auto 20px",
+      background:
+        "linear-gradient(to right, transparent, #d4af37, transparent)",
+    }}
+  />
 
-        {/* Text */}
-        <p
-          style={{
-            fontSize: "14px",
-            color: "#7a5c2e",
-            letterSpacing: "1px",
-          }}
-        >
-          Designed with love by
-        </p>
+  {/* Decorative symbol */}
+  <div
+    style={{
+      color: "#d4af37",
+      fontSize: "17px",
+      marginBottom: "8px",
+    }}
+  >
+    ✦
+  </div>
 
-        <p
-          style={{
-            fontSize: "18px",
-            color: "#5b4636",
-            marginTop: "6px",
-            fontWeight: "500",
-            letterSpacing: "2px",
-          }}
-        >
-          HEMANTH
-        </p>
+  {/* Designed text */}
+  <p
+    style={{
+      margin: 0,
+      fontSize: "14px",
+      color: "#8b6f3d",
+      letterSpacing: "1.5px",
+    }}
+  >
+    Designed with love by
+  </p>
 
-        {/* subtle glow effect */}
-        <motion.div
-          style={{
-            marginTop: "10px",
-            fontSize: "14px",
-            color: "#d4af37",
-          }}
-          animate={{ opacity: [0.6, 1, 0.6] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          ♥
-        </motion.div>
-      </motion.div>
+  {/* Name */}
+  <motion.a
+    href="https://www.instagram.com/hemanthononline/"
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{
+      scale: 1.05,
+    }}
+    whileTap={{
+      scale: 0.97,
+    }}
+    style={{
+      display: "block",
+      marginTop: "6px",
+      fontFamily:
+        "'Playfair Display', Georgia, serif",
+      fontSize: "21px",
+      fontWeight: 700,
+      letterSpacing: "3px",
+      textDecoration: "none",
+      background:
+        "linear-gradient(90deg, #8f6508, #d4af37, #a8780c)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+    }}
+  >
+    HEMANTH
+  </motion.a>
+
+  {/* Instagram ID directly below name */}
+  <motion.a
+    href="https://www.instagram.com/hemanthononline/"
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{
+      scale: 1.05,
+    }}
+    style={{
+      display: "block",
+      marginTop: "5px",
+      fontFamily: "Arial, sans-serif",
+      fontSize: "12px",
+      color: "#c13584",
+      letterSpacing: "1px",
+      textDecoration: "none",
+    }}
+  >
+    @hemanthononline
+  </motion.a>
+
+  {/* Bottom divider */}
+  <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "8px",
+      marginTop: "18px",
+    }}
+  >
+    <span
+      style={{
+        width: "35px",
+        height: "1px",
+        background:
+          "linear-gradient(to right, transparent, #d4af37)",
+      }}
+    />
+
+    <span
+      style={{
+        color: "#d4af37",
+        fontSize: "10px",
+      }}
+    >
+      ✧
+    </span>
+
+    <span
+      style={{
+        width: "35px",
+        height: "1px",
+        background:
+          "linear-gradient(to left, transparent, #d4af37)",
+      }}
+    />
+  </div>
+
+  {/* Heart */}
+  <motion.div
+    animate={{
+      scale: [1, 1.15, 1],
+      opacity: [0.5, 1, 0.5],
+    }}
+    transition={{
+      duration: 2.2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    style={{
+      marginTop: "12px",
+      fontSize: "15px",
+      color: "#b45309",
+    }}
+  >
+    ♥
+  </motion.div>
+</motion.div>
     </>
   );
 }
