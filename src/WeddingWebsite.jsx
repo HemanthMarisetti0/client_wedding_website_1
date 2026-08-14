@@ -295,14 +295,14 @@ export default function WeddingWebsite() {
           {/* ✨ BRIDE & GROOM PORTRAITS */}
           <motion.div
             style={{
-              margin: "55px auto 45px",
-              position: "relative",
+              margin: "30px auto 25px", position: "relative",
               width: "100%",
               maxWidth: "760px",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              padding: "20px 10px 35px",
+              padding: "10px 10px 20px", boxSizing: "border-box",
+              overflow: "visible",
             }}
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -319,7 +319,7 @@ export default function WeddingWebsite() {
             <div
               style={{
                 position: "absolute",
-                width: "520px",
+                width: "min(520px, 100vw)",
                 height: "280px",
                 left: "50%",
                 top: "45%",
@@ -340,25 +340,32 @@ export default function WeddingWebsite() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: "10px",
-                marginBottom: "22px",
+                gap: "clamp(6px, 2vw, 10px)",
+                marginBottom: "clamp(16px, 4vw, 22px)",
                 color: "#d4af37",
+                width: "100%",
               }}
             >
               <span
                 style={{
-                  width: "55px",
+                  width: "clamp(30px, 12vw, 55px)",
                   height: "1px",
                   background:
                     "linear-gradient(to right, transparent, #d4af37)",
                 }}
               />
 
-              <span style={{ fontSize: "14px" }}>✦</span>
+              <span
+                style={{
+                  fontSize: "clamp(11px, 3vw, 14px)",
+                }}
+              >
+                ✦
+              </span>
 
               <span
                 style={{
-                  width: "55px",
+                  width: "clamp(30px, 12vw, 55px)",
                   height: "1px",
                   background:
                     "linear-gradient(to left, transparent, #d4af37)",
@@ -374,11 +381,13 @@ export default function WeddingWebsite() {
               style={{
                 width: "100%",
                 display: "flex",
-                alignItems: "center",
+                alignItems: "flex-start",
                 justifyContent: "center",
-                gap: "22px",
+                gap: "clamp(5px, 2vw, 22px)",
                 position: "relative",
                 zIndex: 2,
+                padding: "0 2px",
+                boxSizing: "border-box",
               }}
             >
               {/* ================================================= */}
@@ -403,28 +412,47 @@ export default function WeddingWebsite() {
                 }}
                 style={{
                   position: "relative",
-                  width: "clamp(140px, 32vw, 220px)",
-                  flexShrink: 0,
+
+                  /*
+                   * Responsive width:
+                   * Desktop  -> max 220px
+                   * Mobile   -> around 28vw
+                   */
+                  width: "clamp(100px, 29vw, 220px)",
+
+                  /*
+                   * Prevent flex from making it smaller than intended.
+                   */
+                  flexShrink: 1,
+
+                  /*
+                   * Important for mobile.
+                   */
+                  minWidth: 0,
+
                   transform: "rotate(-4deg)",
+                  boxSizing: "border-box",
                 }}
               >
                 {/* GOLD FRAME */}
                 <div
                   style={{
-                    padding: "8px",
-                    borderRadius: "23px",
+                    padding: "clamp(4px, 1.5vw, 8px)",
+                    borderRadius: "clamp(14px, 4vw, 23px)",
                     background:
                       "linear-gradient(135deg, #8f6508, #f5dc8b, #d4af37, #fff2b8, #a8780c)",
                     boxShadow:
                       "0 16px 35px rgba(91,70,54,0.20), 0 0 25px rgba(212,175,55,0.18)",
+                    boxSizing: "border-box",
                   }}
                 >
                   <div
                     style={{
-                      padding: "5px",
-                      borderRadius: "18px",
+                      padding: "clamp(2px, 1vw, 5px)",
+                      borderRadius: "clamp(10px, 3vw, 18px)",
                       background: "#fffdf7",
                       border: "1px solid rgba(180,134,20,0.45)",
+                      boxSizing: "border-box",
                     }}
                   >
                     <img
@@ -434,61 +462,81 @@ export default function WeddingWebsite() {
                         width: "100%",
                         aspectRatio: "4 / 5",
                         objectFit: "cover",
+                        objectPosition: "center",
                         display: "block",
-                        borderRadius: "13px",
+                        borderRadius: "clamp(7px, 2vw, 13px)",
+
+                        /*
+                         * Helps browser render image cleanly.
+                         */
+                        imageRendering: "auto",
                       }}
                     />
                   </div>
                 </div>
 
-                {/* CORNERS */}
+                {/* CORNER TOP LEFT */}
                 <div
                   style={{
                     position: "absolute",
-                    top: "-8px",
-                    left: "-8px",
-                    width: "30px",
-                    height: "30px",
+                    top: "clamp(-6px, -1.5vw, -8px)",
+                    left: "clamp(-6px, -1.5vw, -8px)",
+                    width: "clamp(18px, 6vw, 30px)",
+                    height: "clamp(18px, 6vw, 30px)",
                     borderTop: "2px solid #d4af37",
                     borderLeft: "2px solid #d4af37",
                     borderRadius: "9px 0 0 0",
+                    boxSizing: "border-box",
                   }}
                 />
 
+                {/* CORNER BOTTOM RIGHT */}
                 <div
                   style={{
                     position: "absolute",
-                    bottom: "-8px",
-                    right: "-8px",
-                    width: "30px",
-                    height: "30px",
+                    bottom: "clamp(-6px, -1.5vw, -8px)",
+                    right: "clamp(-6px, -1.5vw, -8px)",
+                    width: "clamp(18px, 6vw, 30px)",
+                    height: "clamp(18px, 6vw, 30px)",
                     borderBottom: "2px solid #d4af37",
                     borderRight: "2px solid #d4af37",
                     borderRadius: "0 0 9px 0",
+                    boxSizing: "border-box",
                   }}
                 />
 
                 {/* NAME */}
                 <div
                   style={{
-                    marginTop: "14px",
+                    marginTop: "clamp(8px, 2.5vw, 14px)",
                     textAlign: "center",
-                    padding: "7px 8px",
-                    borderRadius: "13px",
+                    padding: "clamp(5px, 1.5vw, 7px) clamp(4px, 2vw, 8px)",
+                    borderRadius: "clamp(9px, 3vw, 13px)",
                     background:
                       "linear-gradient(180deg, #fffdf7, #fff8e9)",
-                    border:
-                      "1px solid rgba(212,175,55,0.28)",
+                    border: "1px solid rgba(212,175,55,0.28)",
+                    boxSizing: "border-box",
+                    width: "100%",
                   }}
                 >
                   <div
                     style={{
                       fontFamily:
                         "'Playfair Display', Georgia, serif",
-                      fontSize: "18px",
-                      letterSpacing: "2.5px",
+
+                      /*
+                       * Responsive name.
+                       */
+                      fontSize: "clamp(12px, 4vw, 18px)",
+
+                      /*
+                       * Smaller letter spacing on phones.
+                       */
+                      letterSpacing: "clamp(1px, 0.7vw, 2.5px)",
+
                       color: "#7c2d12",
                       fontWeight: 700,
+                      whiteSpace: "nowrap",
                     }}
                   >
                     GANESH
@@ -496,10 +544,12 @@ export default function WeddingWebsite() {
 
                   <div
                     style={{
-                      marginTop: "4px",
-                      fontSize: "13px",
+                      marginTop: "clamp(2px, 1vw, 4px)",
+                      fontSize: "clamp(9px, 2.8vw, 13px)",
                       color: "#a16207",
                       fontWeight: 600,
+                      lineHeight: 1.2,
+                      whiteSpace: "nowrap",
                     }}
                   >
                     <RotatingText
@@ -511,7 +561,7 @@ export default function WeddingWebsite() {
               </motion.div>
 
               {/* ================================================= */}
-              {/* ❤️ HEART — COMPLETELY BETWEEN PHOTOS */}
+              {/* HEART — COMPLETELY BETWEEN PHOTOS */}
               {/* ================================================= */}
 
               <motion.div
@@ -526,23 +576,39 @@ export default function WeddingWebsite() {
                 }}
                 style={{
                   flexShrink: 0,
-                  width: "58px",
-                  height: "58px",
+
+                  /*
+                   * Responsive heart.
+                   */
+                  width: "clamp(34px, 10vw, 58px)",
+                  height: "clamp(34px, 10vw, 58px)",
+
                   borderRadius: "50%",
                   background:
                     "linear-gradient(145deg, #fffdf7, #fff1cf)",
                   border: "2px solid #d4af37",
+
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+
                   zIndex: 5,
+
                   boxShadow:
                     "0 7px 22px rgba(91,70,54,0.18), 0 0 22px rgba(212,175,55,0.25)",
+
+                  boxSizing: "border-box",
+
+                  /*
+                   * Keep heart vertically aligned with
+                   * the upper portion of photos.
+                   */
+                  marginTop: "clamp(45px, 12vw, 95px)",
                 }}
               >
                 <span
                   style={{
-                    fontSize: "26px",
+                    fontSize: "clamp(15px, 5vw, 26px)",
                     color: "#a33b12",
                     lineHeight: 1,
                   }}
@@ -574,28 +640,38 @@ export default function WeddingWebsite() {
                 }}
                 style={{
                   position: "relative",
-                  width: "clamp(140px, 32vw, 220px)",
-                  flexShrink: 0,
+
+                  /*
+                   * Same responsive width as groom.
+                   */
+                  width: "clamp(100px, 29vw, 220px)",
+
+                  flexShrink: 1,
+                  minWidth: 0,
+
                   transform: "rotate(4deg)",
+                  boxSizing: "border-box",
                 }}
               >
                 {/* GOLD FRAME */}
                 <div
                   style={{
-                    padding: "8px",
-                    borderRadius: "23px",
+                    padding: "clamp(4px, 1.5vw, 8px)",
+                    borderRadius: "clamp(14px, 4vw, 23px)",
                     background:
                       "linear-gradient(135deg, #8f6508, #f5dc8b, #d4af37, #fff2b8, #a8780c)",
                     boxShadow:
                       "0 16px 35px rgba(91,70,54,0.20), 0 0 25px rgba(212,175,55,0.18)",
+                    boxSizing: "border-box",
                   }}
                 >
                   <div
                     style={{
-                      padding: "5px",
-                      borderRadius: "18px",
+                      padding: "clamp(2px, 1vw, 5px)",
+                      borderRadius: "clamp(10px, 3vw, 18px)",
                       background: "#fffdf7",
                       border: "1px solid rgba(180,134,20,0.45)",
+                      boxSizing: "border-box",
                     }}
                   >
                     <img
@@ -605,61 +681,68 @@ export default function WeddingWebsite() {
                         width: "100%",
                         aspectRatio: "4 / 5",
                         objectFit: "cover",
+                        objectPosition: "center",
                         display: "block",
-                        borderRadius: "13px",
+                        borderRadius: "clamp(7px, 2vw, 13px)",
+                        imageRendering: "auto",
                       }}
                     />
                   </div>
                 </div>
 
-                {/* CORNERS */}
+                {/* CORNER TOP RIGHT */}
                 <div
                   style={{
                     position: "absolute",
-                    top: "-8px",
-                    right: "-8px",
-                    width: "30px",
-                    height: "30px",
+                    top: "clamp(-6px, -1.5vw, -8px)",
+                    right: "clamp(-6px, -1.5vw, -8px)",
+                    width: "clamp(18px, 6vw, 30px)",
+                    height: "clamp(18px, 6vw, 30px)",
                     borderTop: "2px solid #d4af37",
                     borderRight: "2px solid #d4af37",
                     borderRadius: "0 9px 0 0",
+                    boxSizing: "border-box",
                   }}
                 />
 
+                {/* CORNER BOTTOM LEFT */}
                 <div
                   style={{
                     position: "absolute",
-                    bottom: "-8px",
-                    left: "-8px",
-                    width: "30px",
-                    height: "30px",
+                    bottom: "clamp(-6px, -1.5vw, -8px)",
+                    left: "clamp(-6px, -1.5vw, -8px)",
+                    width: "clamp(18px, 6vw, 30px)",
+                    height: "clamp(18px, 6vw, 30px)",
                     borderBottom: "2px solid #d4af37",
                     borderLeft: "2px solid #d4af37",
                     borderRadius: "0 0 0 9px",
+                    boxSizing: "border-box",
                   }}
                 />
 
                 {/* NAME */}
                 <div
                   style={{
-                    marginTop: "14px",
+                    marginTop: "clamp(8px, 2.5vw, 14px)",
                     textAlign: "center",
-                    padding: "7px 8px",
-                    borderRadius: "13px",
+                    padding: "clamp(5px, 1.5vw, 7px) clamp(4px, 2vw, 8px)",
+                    borderRadius: "clamp(9px, 3vw, 13px)",
                     background:
                       "linear-gradient(180deg, #fffdf7, #fff8e9)",
-                    border:
-                      "1px solid rgba(212,175,55,0.28)",
+                    border: "1px solid rgba(212,175,55,0.28)",
+                    boxSizing: "border-box",
+                    width: "100%",
                   }}
                 >
                   <div
                     style={{
                       fontFamily:
                         "'Playfair Display', Georgia, serif",
-                      fontSize: "18px",
-                      letterSpacing: "2.5px",
+                      fontSize: "clamp(12px, 4vw, 18px)",
+                      letterSpacing: "clamp(1px, 0.7vw, 2.5px)",
                       color: "#7c2d12",
                       fontWeight: 700,
+                      whiteSpace: "nowrap",
                     }}
                   >
                     MAITHILI
@@ -667,10 +750,12 @@ export default function WeddingWebsite() {
 
                   <div
                     style={{
-                      marginTop: "4px",
-                      fontSize: "13px",
+                      marginTop: "clamp(2px, 1vw, 4px)",
+                      fontSize: "clamp(9px, 2.8vw, 13px)",
                       color: "#a16207",
                       fontWeight: 600,
+                      lineHeight: 1.2,
+                      whiteSpace: "nowrap",
                     }}
                   >
                     <RotatingText
@@ -688,36 +773,56 @@ export default function WeddingWebsite() {
 
             <div
               style={{
-                marginTop: "28px",
+                marginTop: "clamp(20px, 6vw, 28px)",
                 display: "flex",
                 alignItems: "center",
-                gap: "8px",
+                justifyContent: "center",
+                gap: "clamp(5px, 2vw, 8px)",
                 color: "#d4af37",
+                width: "100%",
               }}
             >
-              <span style={{ fontSize: "10px" }}>✧</span>
+              <span
+                style={{
+                  fontSize: "clamp(8px, 2.5vw, 10px)",
+                }}
+              >
+                ✧
+              </span>
 
               <span
                 style={{
-                  width: "35px",
+                  width: "clamp(25px, 9vw, 35px)",
                   height: "1px",
                   background:
                     "linear-gradient(to right, transparent, #d4af37)",
                 }}
               />
 
-              <span style={{ fontSize: "12px" }}>✦</span>
+              <span
+                style={{
+                  fontSize: "clamp(9px, 3vw, 12px)",
+                }}
+              >
+                ✦
+              </span>
 
               <span
                 style={{
-                  width: "35px",
+                  width: "clamp(25px, 9vw, 35px)",
                   height: "1px",
                   background:
                     "linear-gradient(to left, transparent, #d4af37)",
                 }}
               />
 
-              <span style={{ fontSize: "10px" }}>✧</span>
+              <span
+                style={{
+                  fontSize: "clamp(8px, 2.5vw, 10px)",
+                }}
+              >
+                ✧
+              </span>
             </div>
           </motion.div>
 
@@ -751,7 +856,7 @@ export default function WeddingWebsite() {
 
             {/* Names */}
             <div style={{ position: "relative", zIndex: 1 }}>
-              <div style={styles.name}>
+              <div style={styles.name} >
                 <RotatingText
                   en="BALA GANESHWARA SWAMI"
                   te="బాల గణేశ్వర స్వామి"
@@ -1291,165 +1396,165 @@ export default function WeddingWebsite() {
         </motion.div>
 
       </div>
-<motion.div
-  style={{
-    marginTop: "75px",
-    padding: "30px 15px 35px",
-    textAlign: "center",
-    position: "relative",
-    fontFamily: "'Cormorant Garamond', serif",
-  }}
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{
-    duration: 1,
-    ease: "easeOut",
-  }}
->
-  {/* Top divider */}
-  <div
-    style={{
-      width: "100%",
-      maxWidth: "240px",
-      height: "1px",
-      margin: "0 auto 20px",
-      background:
-        "linear-gradient(to right, transparent, #d4af37, transparent)",
-    }}
-  />
+      <motion.div
+        style={{
+          marginTop: "75px",
+          padding: "30px 15px 35px",
+          textAlign: "center",
+          position: "relative",
+          fontFamily: "'Cormorant Garamond', serif",
+        }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 1,
+          ease: "easeOut",
+        }}
+      >
+        {/* Top divider */}
+        <div
+          style={{
+            width: "100%",
+            maxWidth: "240px",
+            height: "1px",
+            margin: "0 auto 20px",
+            background:
+              "linear-gradient(to right, transparent, #d4af37, transparent)",
+          }}
+        />
 
-  {/* Decorative symbol */}
-  <div
-    style={{
-      color: "#d4af37",
-      fontSize: "17px",
-      marginBottom: "8px",
-    }}
-  >
-    ✦
-  </div>
+        {/* Decorative symbol */}
+        <div
+          style={{
+            color: "#d4af37",
+            fontSize: "17px",
+            marginBottom: "8px",
+          }}
+        >
+          ✦
+        </div>
 
-  {/* Designed text */}
-  <p
-    style={{
-      margin: 0,
-      fontSize: "14px",
-      color: "#8b6f3d",
-      letterSpacing: "1.5px",
-    }}
-  >
-    Designed with love by
-  </p>
+        {/* Designed text */}
+        <p
+          style={{
+            margin: 0,
+            fontSize: "14px",
+            color: "#8b6f3d",
+            letterSpacing: "1.5px",
+          }}
+        >
+          Designed with love by
+        </p>
 
-  {/* Name */}
-  <motion.a
-    href="https://www.instagram.com/hemanthononline/"
-    target="_blank"
-    rel="noopener noreferrer"
-    whileHover={{
-      scale: 1.05,
-    }}
-    whileTap={{
-      scale: 0.97,
-    }}
-    style={{
-      display: "block",
-      marginTop: "6px",
-      fontFamily:
-        "'Playfair Display', Georgia, serif",
-      fontSize: "21px",
-      fontWeight: 700,
-      letterSpacing: "3px",
-      textDecoration: "none",
-      background:
-        "linear-gradient(90deg, #8f6508, #d4af37, #a8780c)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-    }}
-  >
-    HEMANTH
-  </motion.a>
+        {/* Name */}
+        <motion.a
+          href="https://www.instagram.com/hemanthononline/"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{
+            scale: 1.05,
+          }}
+          whileTap={{
+            scale: 0.97,
+          }}
+          style={{
+            display: "block",
+            marginTop: "6px",
+            fontFamily:
+              "'Playfair Display', Georgia, serif",
+            fontSize: "21px",
+            fontWeight: 700,
+            letterSpacing: "3px",
+            textDecoration: "none",
+            background:
+              "linear-gradient(90deg, #8f6508, #d4af37, #a8780c)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          HEMANTH
+        </motion.a>
 
-  {/* Instagram ID directly below name */}
-  <motion.a
-    href="https://www.instagram.com/hemanthononline/"
-    target="_blank"
-    rel="noopener noreferrer"
-    whileHover={{
-      scale: 1.05,
-    }}
-    style={{
-      display: "block",
-      marginTop: "5px",
-      fontFamily: "Arial, sans-serif",
-      fontSize: "12px",
-      color: "#c13584",
-      letterSpacing: "1px",
-      textDecoration: "none",
-    }}
-  >
-    @hemanthononline
-  </motion.a>
+        {/* Instagram ID directly below name */}
+        <motion.a
+          href="https://www.instagram.com/hemanthononline/"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{
+            scale: 1.05,
+          }}
+          style={{
+            display: "block",
+            marginTop: "5px",
+            fontFamily: "Arial, sans-serif",
+            fontSize: "12px",
+            color: "#c13584",
+            letterSpacing: "1px",
+            textDecoration: "none",
+          }}
+        >
+          @hemanthononline
+        </motion.a>
 
-  {/* Bottom divider */}
-  <div
-    style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: "8px",
-      marginTop: "18px",
-    }}
-  >
-    <span
-      style={{
-        width: "35px",
-        height: "1px",
-        background:
-          "linear-gradient(to right, transparent, #d4af37)",
-      }}
-    />
+        {/* Bottom divider */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "8px",
+            marginTop: "18px",
+          }}
+        >
+          <span
+            style={{
+              width: "35px",
+              height: "1px",
+              background:
+                "linear-gradient(to right, transparent, #d4af37)",
+            }}
+          />
 
-    <span
-      style={{
-        color: "#d4af37",
-        fontSize: "10px",
-      }}
-    >
-      ✧
-    </span>
+          <span
+            style={{
+              color: "#d4af37",
+              fontSize: "10px",
+            }}
+          >
+            ✧
+          </span>
 
-    <span
-      style={{
-        width: "35px",
-        height: "1px",
-        background:
-          "linear-gradient(to left, transparent, #d4af37)",
-      }}
-    />
-  </div>
+          <span
+            style={{
+              width: "35px",
+              height: "1px",
+              background:
+                "linear-gradient(to left, transparent, #d4af37)",
+            }}
+          />
+        </div>
 
-  {/* Heart */}
-  <motion.div
-    animate={{
-      scale: [1, 1.15, 1],
-      opacity: [0.5, 1, 0.5],
-    }}
-    transition={{
-      duration: 2.2,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-    style={{
-      marginTop: "12px",
-      fontSize: "15px",
-      color: "#b45309",
-    }}
-  >
-    ♥
-  </motion.div>
-</motion.div>
+        {/* Heart */}
+        <motion.div
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.5, 1, 0.5],
+          }}
+          transition={{
+            duration: 2.2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{
+            marginTop: "12px",
+            fontSize: "15px",
+            color: "#b45309",
+          }}
+        >
+          ♥
+        </motion.div>
+      </motion.div>
     </>
   );
 }
@@ -1589,13 +1694,13 @@ const styles = {
   },
 
   name: {
-    fontSize: "clamp(26px,7vw,64px)",
+    fontSize: "clamp(22px, 6vw, 52px)",
     color: "#7c2d12",
     fontFamily: "'Playfair Display', serif",
     fontWeight: "600",
     letterSpacing: "1px",
-    lineHeight: "1.2",        // important
-    wordBreak: "break-word",  // prevents overflow on small screens
+    lineHeight: "1.2",
+    wordBreak: "break-word",
   },
 
   weds: {
