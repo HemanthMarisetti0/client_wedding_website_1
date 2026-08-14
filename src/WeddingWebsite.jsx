@@ -1449,7 +1449,7 @@ export default function WeddingWebsite() {
 
         {/* Name */}
         <motion.a
-          href="https://www.instagram.com/hemanthononline/"
+          href="https://www.instagram.com/VINAY_ROXX/"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{
@@ -1473,12 +1473,12 @@ export default function WeddingWebsite() {
             WebkitTextFillColor: "transparent",
           }}
         >
-          HEMANTH
+          VINAY
         </motion.a>
 
         {/* Instagram ID directly below name */}
         <motion.a
-          href="https://www.instagram.com/hemanthononline/"
+          href="https://www.instagram.com/VINAY_ROXX/"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{
@@ -1494,7 +1494,7 @@ export default function WeddingWebsite() {
             textDecoration: "none",
           }}
         >
-          @hemanthononline
+          @VINAY_ROXX
         </motion.a>
 
         {/* Bottom divider */}
