@@ -869,7 +869,7 @@ export default function WeddingWebsite() {
               <div style={styles.name}>
                 <RotatingText
                   en="LAKSHMI MAITHILI"
-                  te="లక్ష్మి మైతిలి"
+                  te="లక్ష్మి మైథిలి"
                 />              </div>
             </div>
 
